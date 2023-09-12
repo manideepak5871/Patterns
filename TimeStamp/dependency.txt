@@ -1,0 +1,23 @@
+INFO:Detectors: (Green)
+TimestampDependency.withdraw() (Timestamp_dependency.sol#11-18) uses timestamp for comparisons
+        Dangerous comparisons:
+        - require(bool)(block.timestamp >= deadline) (Timestamp_dependency.sol#12)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Timestamp_dependency.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+Low level call in TimestampDependency.withdraw() (Timestamp_dependency.sol#11-18):
+        - (success) = msg.sender.call{value: amount}() (Timestamp_dependency.sol#16)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+
+INFO:Detectors: (Green)
+Parameter TimestampDependency.setDeadline(uint256)._deadline (Timestamp_dependency.sol#20) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+INFO:Slither:Timestamp_dependency.sol analyzed (1 contracts with 88 detectors), 5 result(s) found

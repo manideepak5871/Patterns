@@ -1,0 +1,22 @@
+INFO:Detectors: (Green)
+TimestampManipulation.claimReward() (Timestamp_manipulation.sol#8-13) uses timestamp for comparisons
+        Dangerous comparisons:
+        - require(bool,string)(block.timestamp >= deadline,Deadline not yet reached) (Timestamp_manipulation.sol#9)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Timestamp_manipulation.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+TimestampManipulation.reward (Timestamp_manipulation.sol#5) should be constant 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+
+
+INFO:Detectors: (Green)
+TimestampManipulation.deadline (Timestamp_manipulation.sol#4) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+INFO:Slither:Timestamp_manipulation.sol analyzed (1 contracts with 88 detectors), 5 result(s) found
