@@ -1,0 +1,23 @@
+'solc --version' running
+'solc Transaction-order-dependence.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/s/chopin/b/grad/mani5871/Downloads/Patterns-main/Front Running' running
+Compilation warnings/errors on Transaction-order-dependence.sol:
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> Transaction-order-dependence.sol
+
+
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Transaction-order-dependence.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+Low level call in TransactionOrderingDependence.withdraw(uint256) (Transaction-order-dependence.sol#12-17):
+        - (success) = msg.sender.call{value: _amount}() (Transaction-order-dependence.sol#15)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+
+INFO:Detectors: (Green)
+Parameter TransactionOrderingDependence.withdraw(uint256)._amount (Transaction-order-dependence.sol#12) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+INFO:Slither:Transaction-order-dependence.sol analyzed (1 contracts with 88 detectors), 4 result(s) found
