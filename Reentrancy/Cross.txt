@@ -1,0 +1,24 @@
+INFO:Detectors: (Yellow)
+Contract locking ether found:
+        Contract CrossContractReentrancy (Cross-Contract_Reentrancy.sol#7-25) has payable functions:
+         - CrossContractReentrancy.deposit() (Cross-Contract_Reentrancy.sol#10-12)
+         - CrossContractReentrancy.attack(address) (Cross-Contract_Reentrancy.sol#21-24)
+        But does not have a function to withdraw the ether
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether
+
+
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Cross-Contract_Reentrancy.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+CrossContractReentrancy (Cross-Contract_Reentrancy.sol#7-25) should inherit from ITarget (Cross-Contract_Reentrancy.sol#3-5)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-inheritance
+
+
+INFO:Detectors: (Green)
+Parameter CrossContractReentrancy.withdraw(uint256)._amount (Cross-Contract_Reentrancy.sol#14) is not in mixedCase
+Parameter CrossContractReentrancy.attack(address)._target (Cross-Contract_Reentrancy.sol#21) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
