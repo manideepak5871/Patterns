@@ -1,0 +1,11 @@
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Gas1.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+GasLimitVulnerability.addValue(uint256) (Gas1.sol#6-11) uses literals with too many digits:
+        - require(bool,string)(gasleft()() >= 100000,Not enough gas to execute) (Gas1.sol#8)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
+INFO:Slither:Gas1.sol analyzed (1 contracts with 88 detectors), 3 result(s) found

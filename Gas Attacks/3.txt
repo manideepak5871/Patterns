@@ -1,0 +1,10 @@
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Gas3.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+Low level call in GasLimitVulnerabilityPattern2.withdraw() (Gas3.sol#6-12):
+        - (success) = msg.sender.call{gas: gasleft()(),value: amount}() (Gas3.sol#10)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
