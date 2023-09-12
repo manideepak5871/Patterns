@@ -1,0 +1,5 @@
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Dos1.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+INFO:Slither:Dos1.sol analyzed (1 contracts with 88 detectors), 2 result(s) found

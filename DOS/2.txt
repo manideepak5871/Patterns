@@ -1,0 +1,36 @@
+
+INFO:Detectors: (Red)
+Reentrancy in DoS.withdraw(uint256) (Dos2.sol#10-15):
+        External calls:
+        - (success) = msg.sender.call{value: _amount}() (Dos2.sol#12)
+        State variables written after the call(s):
+        - balances[msg.sender] -= _amount (Dos2.sol#14)
+        DoS.balances (Dos2.sol#4) can be used in cross function reentrancies:
+        - DoS.deposit() (Dos2.sol#6-8)
+        - DoS.withdraw(uint256) (Dos2.sol#10-15)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+
+
+INFO:Detectors: (Green)
+DoS.attack(address)._target (Dos2.sol#17) lacks a zero-check on :
+                - (success) = _target.call{value: msg.value}() (Dos2.sol#18)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+INFO:Detectors: (Green)
+Pragma version^0.8.0 (Dos2.sol#1) allows old versions
+solc-0.8.17 is not recommended for deployment
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+
+INFO:Detectors: (Green)
+Low level call in DoS.withdraw(uint256) (Dos2.sol#10-15):
+        - (success) = msg.sender.call{value: _amount}() (Dos2.sol#12)
+Low level call in DoS.attack(address) (Dos2.sol#17-20):
+        - (success) = _target.call{value: msg.value}() (Dos2.sol#18)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+
+INFO:Detectors: (Green)
+Parameter DoS.withdraw(uint256)._amount (Dos2.sol#10) is not in mixedCase
+Parameter DoS.attack(address)._target (Dos2.sol#17) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
